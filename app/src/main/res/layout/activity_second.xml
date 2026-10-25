@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FAFAFA"
+    tools:context=".SecondActivity">
+
+    <!-- Header Judul Aplikasi -->
+    <TextView
+        android:id="@+id/app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ZafirChat - Balasan"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#E91E63" />
+
+    <!-- Input Nama Pengirim (Activity 2) -->
+    <LinearLayout
+        android:id="@+id/layout_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_title"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Anda: "
+            android:textStyle="bold"
+            android:textColor="#424242" />
+
+        <EditText
+            android:id="@+id/editTextUsernameSecond"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_input_card"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:hint="Nama (cth: Teman)"
+            android:text="Teman"
+            android:textSize="14sp"
+            android:inputType="textPersonName"
+            android:autofillHints="name" />
+    </LinearLayout>
+
+    <!-- Header Riwayat Percakapan -->
+    <TextView
+        android:id="@+id/text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_username"
+        android:layout_marginTop="12dp"
+        android:text="Riwayat Percakapan:"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#616161" />
+
+    <!-- Area Riwayat Pesan (Scrollable) -->
+    <ScrollView
+        android:id="@+id/scrollViewMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_header"
+        android:layout_above="@id/layout_bottom_input"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_message_card"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/text_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Belum ada pesan."
+            android:textSize="15sp"
+            android:textColor="#212121"
+            android:lineSpacingExtra="4dp" />
+    </ScrollView>
+
+    <!-- Area Bottom Input Pesan & Tombol Balas -->
+    <LinearLayout
+        android:id="@+id/layout_bottom_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/editTextSecond"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input_card"
+            android:hint="Ketik balasan Anda..."
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:inputType="text"
+            android:textSize="14sp"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/buttonSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:text="BALAS"
+            android:textSize="14sp"
+            android:backgroundTint="#E91E63"
+            android:onClick="returnReply" />
+    </LinearLayout>
+
+</RelativeLayout>
